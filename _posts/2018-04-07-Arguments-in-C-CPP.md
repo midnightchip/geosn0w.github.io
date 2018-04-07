@@ -2,7 +2,7 @@
 layout: post
 title: How to implement program arguments and how they are parsed in C/C++
 ---
-##Abstract
+###Abstract
 
 C and C++ offer a big level of freedom to the programmer. That is efficiently dangerous, as the programmer has to know what he is doing.
 Computers are deterministic machines. They do what they are told to do, and if what they're told is wrong, they will most likely
@@ -10,7 +10,7 @@ proceed anyways. While C and C++ compilers do warn programmers and in some cases
 Don't expect the compiler to try to guess what you try to do. It will assume you know what you try to implement and will not check your code logic for anything other than grammar errors or type errors.
 In this post, I will go to the lengths of how you can implement arguments in your program and how they work.
 
-##Implementation
+###Implementation
 
 You may scratch your head saying "gee, what has that abstract to do with the topic?". Well, as the compiler assumes you know what you are doing, it will also assume you programmed whatever functions you need.
 By default, starting a program `program` with the arguments `-debug -toFile` will do absolutely nothing to the program because a computer is a deterministic machine and it will not implement argument parsing in your program for you.
