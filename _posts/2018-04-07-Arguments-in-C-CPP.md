@@ -61,7 +61,8 @@ Your name is George and you are 29 years old.
 MacBook-Pro-van-Mac:~ mac$ 
 ```
 
-This exactly the expected behavior. We got the arguments and we used them during the life of the program.
+This is exactly the expected behavior. 
+We got the arguments and we used them during the life of the program.
 What happens if the user forgets to supply the arguments? Or an argument? Or a space between arguments? Or too many arguments?
 Well, since we do have a safety check based on comparing `argc` with the number of arguments we should have (3) we can stop an error.
 
