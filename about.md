@@ -4,9 +4,9 @@ title: WHOAMI
 permalink: /about/
 ---
 <p>
-`
+
 geosn0w:~ geosn0w$ whoami
-`
+
 </p>
 <img src="https://image.ibb.co/mkXiMn/lol.png" alt="GeoSn0w">
 
