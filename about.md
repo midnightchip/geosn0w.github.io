@@ -32,7 +32,7 @@ Others believe I took `Sn0w` from another iOS developer, `iH8Sn0w`. Again, untru
 <ul>
 <li>Hardware engineer (Programming PLCs and prototyping shit).</li>
 <li>Software engineer (C#)<li>
-
+</ul>
 ### Talk with me in:
 <ul>
 <li>C</li>
