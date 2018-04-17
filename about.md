@@ -28,12 +28,14 @@ Some people believe I took `geo` from a famous iOS Hacker, George Hotz who goes 
 
 Others believe I took `Sn0w` from another iOS developer, `iH8Sn0w`. Again, untrue. He took it from the same place I took it, where it was originally used: `UltraSn0w` - an iOS unlock payload from back in the days
 
-### George IRL:
+### George IRL
+
 <ul>
 <li>Hardware engineer (Programming PLCs and prototyping shit).</li>
 <li>Software engineer (C#)</li>
 </ul>
-### Talk with me in:
+
+### Talk with me in
 <ul>
 <li>C</li>
 <li>C++</li>
@@ -46,6 +48,7 @@ Others believe I took `Sn0w` from another iOS developer, `iH8Sn0w`. Again, untru
 <li>BASIC</li>
 <li>HTML</li>
 </ul>
+
 ### Contact me
 
 Tweet to me: @FCE365
