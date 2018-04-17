@@ -35,6 +35,12 @@ Others believe I took `Sn0w` from another iOS developer, `iH8Sn0w`. Again, untru
 <li>Software engineer (C#)</li>
 </ul>
 
+### Social info
+<ul>
+  <li> Relationship status: In a complicated relationship with IDA Hopper</li>
+  <li> Date of birth: Back when Commodore64 was still a thing</li>
+  </ul>
+  
 ### Talk with me in
 <ul>
 <li>C</li>
