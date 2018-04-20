@@ -31,7 +31,7 @@ As you can see, multiple allocations and deallocations can result in free chunks
 Depending on what kind of project you want to create, you may find the following good practices useful.
 If you are working with strings (`char arrays`), you may wanna use the `F()` macro. To do that you transform your code from:
 
-```C
+```c
 setup(){
   Serial.print("Hello my name is George and I like to code.");
 }
