@@ -1,6 +1,6 @@
 <b>Abstract</b>
 
-Hi there! GeoSn0w here! There are times when you need to take a closer look at the address space of your Arduino development board. 
+Hello everyone, GeoSn0w here! There are times when you need to take a closer look at the address space of your Arduino development board. 
 Small sketches may or may not render memory problems depending on the Arduino board you've got, but a fairly complex project can 
 easily chew through the SRAM available and multiple allocations and deallocations using `malloc()` and `free()` may result in 
 memory issues because the available free chunks may not be big enough to hold what you're about to allocate.
@@ -30,6 +30,7 @@ As you can see, multiple allocations and deallocations can result in free chunks
 ### What can you do?
 Depending on what kind of project you want to create, you may find the following good practices useful.
 If you are working with strings (`char arrays`), you may wanna use the `F()` macro. To do that you transform your code from:
+
 ```C
 setup(){
   Serial.print("Hello my name is George and I like to code.");
