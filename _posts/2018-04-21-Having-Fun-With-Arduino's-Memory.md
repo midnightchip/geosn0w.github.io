@@ -114,7 +114,7 @@ setup(){
 ```
 This code will hapily print the address where the function `helloWorldFunction` resides in the memory. To get the address, we use the `&` operator. The pointer can point to a function that returns an `int` and has no parameters `(void)` passed to it. We also need to cast the pointer to `int` by doing `(int) functionPointer` when we print it. Finally, the `HEX` means that we want to print the address in hexadecimal format.
 
-### Peaking into the memory
+### Peeking into the memory
 If you want to obtain the address of the Stack Pointer and the Heap Pointer, it's pretty simple.
 Let's assume this code:
 
