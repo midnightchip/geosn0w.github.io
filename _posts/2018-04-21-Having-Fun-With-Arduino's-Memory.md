@@ -26,5 +26,5 @@ Now that is clear that Arduino's SRAM is nowhere near enough for beefy projects,
 I know that this whole memory concept may sound confusing for the beginners, so I'll try to build a diagram that should be able to demonstrate how this phenomenon occurs.
 
 <center>
-[[https://raw.githubusercontent.com/GeoSn0w/geosn0w.github.io/master/images/memory%20segmentation%20on%20arduino.png|alt=Memory Segmentation Diagram by GeoSn0w]]
+[[https://raw.githubusercontent.com/GeoSn0w/geosn0w.github.io/master/images/memory%20segmentation%20on%20arduino.png]]
 </center>
