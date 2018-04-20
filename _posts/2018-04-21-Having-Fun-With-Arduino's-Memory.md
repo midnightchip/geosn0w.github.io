@@ -8,6 +8,7 @@ memory issues because the available free chunks may not be big enough to hold wh
 In situations like these, it's recommended to keep an eye on the memory, the way data is positioned, and how you can optimize it.
 
 ### A matter of memory
+
 As you probably know, Arduino boards, especially the `AVR` ones, don't come with an awful lot of memory. They're intended for relatively small projects (or very well optimized ones - that's the beauty of working that close to the hardware). To better illustrate the memory problems that can occur, I've composed the following table containing the built-in SRAM, EEPROM, Flash and the architecture of
 the most common Arduino boards.
 
