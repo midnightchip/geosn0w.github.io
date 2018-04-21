@@ -122,9 +122,9 @@ Let's assume this code:
 uint8_t * HeapPointer, * StackPointer; // Globally declaring the Stack and Heap pointers.
 int getPointers(){
   StackPointer = (uint8_t *)malloc(4); //We do a small allocation.
-  HeapPointer = StackPointer // We save the value of the heap pointer.
+  HeapPointer = StackPointer; // We save the value of the heap pointer.
   free(StackPointer); // We use the dreaded free() to zero the StackPointer.
-  StackPointer = (uint8_t *)(SP) //Get the Stack Pointer
+  StackPointer = (uint8_t *)(SP); //Get the Stack Pointer
   return 0;
 }
 setup(){
