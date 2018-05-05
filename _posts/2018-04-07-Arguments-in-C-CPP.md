@@ -2,8 +2,6 @@
 layout: post
 title: How to implement program arguments and how they are parsed in C/C++
 ---
-###### Abstract
-
 C and C++ offer a big level of freedom to the programmer. That is efficiently dangerous, as the programmer has to know what he is doing.
 Computers are deterministic machines. They do what they are told to do, and if what they're told is wrong, they will most likely
 proceed anyways. While C and C++ compilers do warn programmers and in some cases even refuse to compile, that only happens if the grammar errors (as in programming language grammar) are found.
