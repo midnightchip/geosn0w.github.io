@@ -1,3 +1,7 @@
+---
+layout: post
+title: Having Fun With Arduino's Memory
+---
 Hello everyone, GeoSn0w here! There are times when you need to take a closer look at the address space of your Arduino development board. 
 Small sketches may or may not render memory problems depending on the Arduino board you've got, but a fairly complex project can 
 easily chew through the SRAM available and multiple allocations and deallocations using `malloc()` and `free()` may result in 
