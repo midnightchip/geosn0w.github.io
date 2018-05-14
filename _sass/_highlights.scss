@@ -7,15 +7,15 @@
   -webkit-box-shadow: 0px 0px rgba(0,0,0,0.1);
   box-shadow: 0px 0px rgba(0,0,0,0.1);
   overflow: auto;
+  highlighter-rouge & {
+    background: #eef;
+  }
 }
 
 code {
   font-family:'Consolas','Courier', monospace;
 }
 
-highlighter-rouge & {
-    background: #eef;
-}
 .highlight .c { color: #586E75 } /* Comment */
 .highlight .err { color: #93A1A1 } /* Error */
 .highlight .g { color: #93A1A1 } /* Generic */
