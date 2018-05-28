@@ -21,7 +21,7 @@ By starting the game and opening the "Inspect Element" menu, we can see that the
 Great! Now it says "Paused in debugger". We've also got our first bits of information about the game on the debugger. There is a function called "Runner" with a lot of components that seem to be related to the game logic. Here are some of the components inside the "Runner" function. Amongst other stuff, in the "__proto__" you can see a function called "gameOver()"
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/15067741/40609795-c988330a-623d-11e8-8fe4-58874490ceee.png"/>
+  <img src="https://user-images.githubusercontent.com/15067741/40610200-6a65f432-623f-11e8-8e0e-de418a4263b3.png"/>
 </p>
 
 <p align="center">
