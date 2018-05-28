@@ -27,7 +27,9 @@ Great! Now it says "Paused in debugger". We've also got our first bits of inform
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15067741/40609799-cade4da2-623d-11e8-874f-431d82adb0e6.png"/>
 </p>
+
 ### Hacking the game
+
 As we identified earlier, there is a function prototype called "gameOver()" that handles exactly what it claims. The original code of the function is the following:
 
 ```js
