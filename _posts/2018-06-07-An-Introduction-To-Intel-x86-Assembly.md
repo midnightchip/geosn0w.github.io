@@ -90,27 +90,74 @@ int main(){
 ```
 
 ```asm
+_compare:
+00001f40         push       ebp                                                 ; XREF=0x10ac, _main+30
+00001f41         mov        ebp, esp
+00001f43         sub        esp, 0xc
+00001f46         mov        dword [ss:ebp+var_4], 0x2
+00001f4d         mov        dword [ss:ebp+var_8], 0x1
+00001f54         mov        eax, dword [ss:ebp+var_4]
+00001f57         add        eax, dword [ss:ebp+var_8]
+00001f5a         mov        dword [ss:ebp+var_C], eax
+00001f5d         mov        eax, dword [ss:ebp+var_C]
+00001f60         add        esp, 0xc
+00001f63         pop        ebp
+00001f64         ret        
+; endp
+                        
 _main:
-00001f70         push       ebp
+00001f70         push       ebp                           ; Push the Stack Base Pointer
 00001f71         mov        ebp, esp
 00001f73         sub        esp, 0x18                     ; Subtract 24 from the Stack Pointer
 00001f76         mov        dword [ss:ebp+var_4], 0x0
 00001f7d         mov        dword [ss:ebp+var_8], 0x0     ; Clearing purposes?
 00001f84         cmp        dword [ss:ebp+var_8], 0xc     ; This is where the comparision is done with 12.
-00001f88         jne        0x1f9b                        ; Jump if not equal
+00001f88         jne        0x1f9b                        ; Jump if not equal (pretty much executes the ELSE)
 
 00001f8e         call       _compare                      ; call compare();
 00001f93         mov        dword [ss:ebp+var_C], eax
 00001f96         jmp        0x1fa2
 
-00001f9b         mov        dword [ss:ebp+var_4], 0x0     ; XREF=_main+24
+00001f9b         mov        dword [ss:ebp+var_4], 0x0     ; This is the beginning of the ELSE statement
 
-00001fa2         mov        eax, dword [ss:ebp+var_4]     ; XREF=_main+38
+00001fa2         mov        eax, dword [ss:ebp+var_4]     ; Return 0;
 00001fa5         add        esp, 0x18
-00001fa8         pop        ebp
+00001fa8         pop        ebp                           ; Pop the Stack Base Pointer
 00001fa9         ret                                      ; Bail out
                         
 ```
 
 As you can see, only a few of the instructions are relevant for our If - Else statement. The rest are either the compiler's way of pushing the "X" variable to the stack, the function prologue, epilogue and calls.
 In order to understand the program flow, you have to ignore the bits you don't understand and focus on the ones that makes sense first.
+
+### Function calls
+
+As you can see, the function calls are done using the CALL instruction which accepts a single operand. This is the address of the function to jump to. Once the CALL instruction is hit, it will push the current Instruction Pointer to the stack (so that it the program can continue from where it left when the called function RETurns), and then it jumps to address of the called function. In the above example, the CALL happens at address `0x00001f8e` and the call instruction calls compare() which is at address `0x00001f40`.
+
+In order to return to the calee, the function ends with a RET instruction. Additionally, one can instruct RET to increment the Stack Pointer (ESP) by a number of bytes after the instruction pointer is popped.
+
+### Using inline assembly in C and C++
+
+Some compilers allow you to write inline assembly code and embed it into your C and C++ code. This is done using the `__asm__` notation or simply using the asm().
+
+Here's a quick example of a C program that also involves assembly:
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int source = 3;
+int destination = 0;
+
+int main(){
+     asm ("mov %1, %0\n\t"
+         "add $4, %0"
+         : "=r" (destination)
+         : "r" (source)
+     );
+
+     printf("The result is %d\n", destination);
+}
+
+```
+
