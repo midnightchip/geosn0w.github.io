@@ -8,7 +8,9 @@ permalink: /about/
 geosn0w:~ geosn0w$ whoami
 
 </p>
+<p align="center">
 <img src="https://image.ibb.co/mkXiMn/lol.png" alt="GeoSn0w">
+  </p>
 
 ### More Information
 
