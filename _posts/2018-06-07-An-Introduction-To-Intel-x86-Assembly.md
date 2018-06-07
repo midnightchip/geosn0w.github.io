@@ -18,7 +18,9 @@ Before starting your journey onto the IA-32 assembly, it's a very good idea to l
 The IA-32 CPUs have 8 general purpose 32-Bit registers. Of course, these CPUs have way more registers than that, but only eight of them are truly general purpose. These registers are very important and you will find them scattered all over the place in the assembly output of any binary disassembler. A list of the available registers and a brief description is provided below.
 
 EAX, EBX, ECX and EDX are general purpose registers usable for various operations. ECX is sometimes used as a counter by repetitive instructions.
+
 EBP and ESP are the Stack Base Pointer and the Stack Pointer. Together, these two create the Stack Frame.
+
 EDI and ESI are the Destination Index and Source Index registers and are used when dealing with the memory copying.
 
 The preceding "E" in the register name is standing for "extended". That is because the name is carried over from the 16-bit architecture where the registers were, as you may have figured out, 16-bit wide. 
@@ -30,11 +32,17 @@ Aside from the registers, the CPU also has flags which are used during various o
 ### Arithmetics on the IA-32
 
 The IA-32 instruction set contains a six instructions for arithmetic purposes. 
+
 ADD  - Used: ADD Operand1, Operand2 - The result is stored in Operand1
+
 SUB  - Used: SUB Operand1, Operant2 - The result is stored in Operand1
+
 DIV  - Used: DIV Operand            - Divides the 64-bit value from EDX:EAX by the unsigned operand specified.
+
 MUL  - Used: MUL Operand            - Multiplies the Unsigned operand specified, by EAX and stores the result as 64-bit in EDX:EAX
+
 IDIV - Used: IDIV Operand           - Divides the 64-bit value from EDX:EAX by the signed operand specified.
+
 IMUL - Used:                        - Multiplies the signed operand specified, by EAX and stores the result as 64-bit in EDX:EAX
 
 ### Example
