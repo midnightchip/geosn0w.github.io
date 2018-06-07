@@ -7,9 +7,14 @@ When I first started Reverse Engineering, I was looking into something to begin 
 
 Reverse Engineering is, basically, just a better understand of computers and how they work. You don't essentially learn how to hack or how to reverse engineer, you just learn how computer work. When I first started, I needed to chose a platform because Reverse Engineering can involve different stepts depending on the target CPU. I started with Intel x86 (IA-32). This is what I am going to cover in this write-up, and hopefully this will help beginners understand the basics a bit better.
 
-### Beginning with the beginning
+### Nota Bene!
 
 A very important thing you need to keep in mind when you learn how to read and interpret assembly is that each CPU has a different set of instructions which interact in different way with one another. Even the mnemonics are different from a CPU architecture to another. For example, the x86 Intel CPU has different instructions compared to the armv7 CPU. While some mnemonics may match, some of them are present on architecture but not in the others. Usually, the reference manuals contain a great deal of details about each instruction.
+
+### Mind the compiler
+Today's technology is pretty reliable, it works fast and the speed has long became a requirement when we buy a computer. For computer programs to work fast, compilers, those programs that interpret your C, C++, C#, etc. source code and transform it into machine readable code, usually add and remove pieces of code from the final binary. This is done for optimization purposes. Either to remove useless CPU cycles or to diminish the RAM footprint. The problem is that, when we start reversing a binary it is a bit hard to tell what belongs to the actual program logic and what is added for optimization by the compiler. 
+
+A good technique for beginner reverse engineers is to focus more on underatanding the flow of the program (by seeking and understanding where the program calls a function, jumps to a different location, updates or checks a variable, etc.) than on the whole thing. It is also a good idea to understand the structure of a procedure in assembly. It would help you understand why you can see a pattern of instructions in the beginning of every function. This is called the function prologue, but about this we're talking later on.
 
 ### CPU Registers
 
@@ -58,3 +63,54 @@ JMP 0x1001DDe1 ; Unconditional jump to that address.
 ```
 
 The uncondtional jump would not have the chance to be executed if the above JNE executed. Since the comparision on which the JNE instruction relies resulted in the two values being equal, the ZF (Zero Flag) is set and the Jump If Not Zero (JNZ) is skipped. The next instruction after the conditional jump is executed until the JMP which is an unconditional jump. This means that the jump will happen no matter what, as long as the CPU can reach the execution of this instruction.
+
+You can see this sort of comparison followed by a conditional jump in many programs. The closest high-level programming concept that matches this assembly snippet would be an If Condition or other related control flow statements.
+
+For example, the following code contains a simple If - Else statement. Let's see how will this be represented in assembly after GCC compiler does its job.
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int compare(){
+  int x = 2;
+  int y = 1;
+  int z = x + y;
+  return z;
+}
+
+int main(){
+    int x = 0;
+    if (x = 12){
+      compare();
+    } else {
+      return 0;
+    }
+}
+
+
+```asm
+_main:
+00001f70         push       ebp
+00001f71         mov        ebp, esp
+00001f73         sub        esp, 0x18                     ; Subtract 24 from the Stack Pointer
+00001f76         mov        dword [ss:ebp+var_4], 0x0
+00001f7d         mov        dword [ss:ebp+var_8], 0x0     ; Clearing purposes?
+00001f84         cmp        dword [ss:ebp+var_8], 0xc     ; This is where the comparision is done with 12.
+00001f88         jne        0x1f9b                        ; Jump if not equal
+
+00001f8e         call       _compare                      ; call compare();
+00001f93         mov        dword [ss:ebp+var_C], eax
+00001f96         jmp        0x1fa2
+
+00001f9b         mov        dword [ss:ebp+var_4], 0x0     ; XREF=_main+24
+
+00001fa2         mov        eax, dword [ss:ebp+var_4]     ; XREF=_main+38
+00001fa5         add        esp, 0x18
+00001fa8         pop        ebp
+00001fa9         ret                                      ; Bail out
+                        
+```
+
+As you can see, only a few of the instructions are relevant for our If - Else statement. The rest are either the compiler's way of pushing the "X" variable to the stack, the function prologue, epilogue and calls.
+In order to understand the program flow, you have to ignore the bits you don't understand and focus on the ones that makes sense first.
