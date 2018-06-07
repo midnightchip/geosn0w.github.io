@@ -32,7 +32,9 @@ The preceding "E" in the register name is standing for "extended". That is becau
 
 Here is a diagram I've made to help you understand the registers and their 16-Bit counterparts.
 
-<center><img src="https://user-images.githubusercontent.com/15067741/41131632-4047f37e-6ac5-11e8-84e2-827c63a231af.png" alt="IA-32 Registers Diagram"></center>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/15067741/41131632-4047f37e-6ac5-11e8-84e2-827c63a231af.png" alt="IA-32 Registers Diagram"></center>
+  </p>
 
 ### CPU Flags
 
