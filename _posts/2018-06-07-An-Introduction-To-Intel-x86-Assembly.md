@@ -3,7 +3,9 @@ layout: post
 title: An introduction to x86 Intel Assembly For Reverse Engineering
 ---
 
-When I first started Reverse Engineering, I was looking into something, to begin with. I eventually decided to start with understanding assembly because after all, that's the best you can get when the source code isn't publicly available unless you find pleasure in reading 1s and 0s or HEX dumps. A few decades ago, a lot of software used to be written in assembly language specific to the CPUs at the time. I remember writing assembly code for the 6502 CPU back on the Commodore 64 because sometimes, the BASIC was just too slow. It wasn't really fun. Nowadays, high-level programming languages are way better in terms of speed and ease of use, however, the assembly language is still actively used where very good control over the hardware has to be achieved and for reverse engineering.
+When I first started Reverse Engineering, I was looking into something, to begin with. I eventually decided to start with understanding assembly because after all, that's the best you can get when the source code isn't publicly available unless you find pleasure in reading 1s and 0s or HEX dumps. A few decades ago, a lot of software used to be written in assembly language specific to the CPUs at the time. 
+
+I remember writing assembly code for the 6502 CPU back on the Commodore 64 because sometimes, the BASIC was just too slow. It wasn't really fun. Nowadays, high-level programming languages are way better in terms of speed and ease of use, however, the assembly language is still actively used where very good control over the hardware has to be achieved and for reverse engineering.
 
 Reverse Engineering is, basically, just a better understand of computers and how they work. You don't essentially learn how to hack or how to reverse engineer, you just learn how computer work. When I first started, I needed to choose a platform because Reverse Engineering can involve different steps depending on the target CPU. I started with Intel x86 (IA-32). This is what I am going to cover in this write-up, and hopefully, this will help beginners understand the basics a bit better.
 
