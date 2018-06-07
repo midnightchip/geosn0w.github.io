@@ -50,11 +50,11 @@ IMUL - Used:                        - Multiplies the signed operand specified, b
 In this example you can see the CMP, JNE and some general purpose registers used in a block of code that resembles the if conditions in a high-level programming language.
 
 ```asm
-ADD EAX, 12 // We add 12 to the EAX register's value
-CMP EAX, 0xC // We compare EAX with the hex representation of decimal 12
-JNE 0x1001FFee1 // If the comparison results that EAX = 12, the ZF is set and the JNE won't proceed to the address specified.
-MOV EDI, [ECX+0x4b2] // Move whatever is at ECX + 0x4b2 offset into the EDI register
-JMP 0x1001DDe1 // Unconditional jump to that address.
+ADD EAX, 12 ; We add 12 to the EAX register's value
+CMP EAX, 0xC ; We compare EAX with the hex representation of decimal 12
+JNE 0x1001FFee1 ; If the comparison results that EAX = 12, the ZF is set and the JNE won't proceed to the address specified.
+MOV EDI, [ECX+0x4b2] ; Move whatever is at ECX + 0x4b2 offset into the EDI register
+JMP 0x1001DDe1 ; Unconditional jump to that address.
 ```
 
 The uncondtional jump would not have the chance to be executed if the above JNE executed. Since the comparision on which the JNE instruction relies resulted in the two values being equal, the ZF (Zero Flag) is set and the Jump If Not Zero (JNZ) is skipped. The next instruction after the conditional jump is executed until the JMP which is an unconditional jump. This means that the jump will happen no matter what, as long as the CPU can reach the execution of this instruction.
