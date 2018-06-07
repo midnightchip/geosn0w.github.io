@@ -62,7 +62,7 @@ IMUL - Used:                        - Multiplies the signed operand specified, b
 
 In this example, you can see the CMP, JNE and some general purpose registers used in a block of code that resembles the if conditions in a high-level programming language.
 
-```asm
+```c
 ADD EAX, 12 ; We add 12 to the EAX register's value
 CMP EAX, 0xC ; We compare EAX with the hex representation of decimal 12
 JNE 0x1001FFee1 ; If the comparison results that EAX = 12, the ZF is set and the JNE won't proceed to the address specified.
