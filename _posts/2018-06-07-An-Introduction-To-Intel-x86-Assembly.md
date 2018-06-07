@@ -97,7 +97,7 @@ int main(){
 }
 ```
 
-```asm
+```c
 _compare:
 00001f40         push       ebp                                                 ; XREF=0x10ac, _main+30
 00001f41         mov        ebp, esp
