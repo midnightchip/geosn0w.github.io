@@ -19,7 +19,7 @@ No... really... I am a programmer, I am interested in hacking, security, UNIX, O
 I like Linux. I have hard feelings for Windows. (Fucking Updates)
 
 ### Nickname etymology 
-<b>GeoSnow</b>
+<b>GeoSn0w</b>
 
 Geo - Represents short for "George", my real name.
 
